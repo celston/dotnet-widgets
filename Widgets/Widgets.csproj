@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{33C3A598-CC33-4115-80E7-ED8EF35312B6}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Widgets</RootNamespace>
+    <AssemblyName>Widgets</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\CommandBuilders\Dates\DatesInsertCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Dates\DatesSelectByRevisionCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Dates\DatesTruncateCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Dimensions\DimensionsSelectActiveCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Dimensions\DimensionsTruncateCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Specifications\SpecificationsSelectActiveCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Specifications\SpecificationsTruncateCommandBuilder.cs" />
+    <Compile Include="Data\DenormalizedWidgetDataManager.cs" />
+    <Compile Include="Data\Hydrators\DatesHydrator.cs" />
+    <Compile Include="Data\Hydrators\DimensionsHydrator.cs" />
+    <Compile Include="Data\CommandBuilders\Dimensions\DimensionsInsertCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Dimensions\DimensionsSelectByRevisionCommandBuilder.cs" />
+    <Compile Include="Data\IWidgetDataManager.cs" />
+    <Compile Include="Data\CommandBuilders\Specifications\ReflectionNormalizedSpecificationsInsertCommandBuilder.cs" />
+    <Compile Include="Data\Hydrators\SpecificationsHydrator.cs" />
+    <Compile Include="Data\CommandBuilders\Specifications\SpecificationsSelectByRevisionCommandBuilder.cs" />
+    <Compile Include="Data\WidgetDataManager.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="IDates.cs" />
+    <Compile Include="Validators\DatesValidator.cs" />
+    <Compile Include="Validators\DimensionsValidator.cs" />
+    <Compile Include="Data\CommandBuilders\Specifications\ISpecificationsInsertCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Specifications\SpecificationsInsertCommandBuilder.cs" />
+    <Compile Include="Validators\SpecificationsValidator.cs" />
+    <Compile Include="Data\CommandBuilders\Dimensions\StoredProcedureDimensionsInsertCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Dimensions\IDimensionsInsertCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Dimensions\TextDimensionsInsertCommandBuilder.cs" />
+    <Compile Include="Data\NormalizedWidgetDataManager.cs" />
+    <Compile Include="Widget.cs" />
+    <Compile Include="WidgetManager.cs" />
+    <Compile Include="Validators\WidgetValidator.cs" />
+    <Compile Include="IDimensions.cs" />
+    <Compile Include="ISpecifications.cs" />
+    <Compile Include="IWidget.cs" />
+    <Compile Include="IWidgetCreateRequest.cs" />
+    <Compile Include="IWidgetUpdateRequest.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gnosis.Data\Gnosis.Data.csproj">
+      <Project>{0591e9d2-4f40-42c7-b0e1-f852c3e711b0}</Project>
+      <Name>Gnosis.Data</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gnosis.Entities\Gnosis.Entities.csproj">
+      <Project>{645fe784-ebc7-44d5-a977-78ceb8cd5b45}</Project>
+      <Name>Gnosis.Entities</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gnosis\Gnosis.csproj">
+      <Project>{c51c803e-ba14-410e-8627-2faa6c3fe178}</Project>
+      <Name>Gnosis</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{645FE784-EBC7-44D5-A977-78CEB8CD5B45}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Gnosis.Entities</RootNamespace>
+    <AssemblyName>Gnosis.Entities</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Data\CommandBuilders\DenormalizedFieldInsertCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\EntityRevision\EntityRevisionInsertCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\EntityRevision\EntityRevisionTruncateCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Entity\EntitySelectByIdAndTypeCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Entity\EntitySelectByIdListCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Entity\EntitySelectByTypeCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Entity\EntitySelectCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Entity\EntityTruncateCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\FieldDecimal\FieldDecimalTruncateCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\FieldUniqueIdentifier\FieldUniqueIdentifierInsertCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\FieldUniqueIdentifier\FieldUniqueIdentifierSelectActiveByNameValueCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\FieldUniqueIdentifier\FieldUniqueIdentifierSelectActiveCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\FieldUniqueIdentifier\FieldUniqueIdentifierSelectByRevisionCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\FieldUniqueIdentifier\FieldUniqueIdentifierTruncateCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\FieldVarcharActive\FieldVarcharActiveInsertCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\FieldVarcharActive\FieldVarcharActiveSelectByIdCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\FieldVarcharActive\FieldVarcharActiveTruncateCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\FieldVarcharActive\FieldVarcharActiveUpdateCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\FieldVarchar\FieldVarcharInsertCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\FieldVarchar\FieldVarcharSelectActiveCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\FieldVarchar\FieldVarcharSelectByRevisionCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\FieldVarchar\FieldVarcharTruncateCommandBuilder.cs" />
+    <Compile Include="Data\EntityDataCreator.cs" />
+    <Compile Include="Data\EntityDataManager.cs" />
+    <Compile Include="Data\CommandBuilders\Entity\EntityCountByIdCommandBuilder.cs" />
+    <Compile Include="Data\EntityHydrator.cs" />
+    <Compile Include="Data\CommandBuilders\Entity\EntitySelectByIdCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\NormalizedDataSelectByRevisionCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\ReflectionNormalizedDataInsertCommandBuilder.cs" />
+    <Compile Include="Entity.cs" />
+    <Compile Include="Validators\EntityCreateValidator.cs" />
+    <Compile Include="Data\CommandBuilders\Entity\EntityInsertCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Entity\EntitySelectCountByIdAndRevisionCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\Entity\EntityUpdateCommandBuilder.cs" />
+    <Compile Include="Validators\EntityRetrieveValidator.cs" />
+    <Compile Include="Validators\EntityUpdateValidator.cs" />
+    <Compile Include="Exceptions.cs" />
+    <Compile Include="Data\CommandBuilders\FieldDecimal\FieldDecimalInsertCommandBuilder.cs" />
+    <Compile Include="IEntity.cs" />
+    <Compile Include="IEntityCreateRequest.cs" />
+    <Compile Include="Data\IEntityDataManager.cs" />
+    <Compile Include="IEntityUpdateRequest.cs" />
+    <Compile Include="Data\CommandBuilders\FieldDecimal\IFieldDecimalInsertCommandBuilder.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Data\CommandBuilders\FieldDecimal\StoredProcedureFieldDecimalInsertCommandBuilder.cs" />
+    <Compile Include="Data\CommandBuilders\FieldDecimal\TextFieldDecimalInsertCommandBuilder.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Gnosis.Data\Gnosis.Data.csproj">
+      <Project>{0591e9d2-4f40-42c7-b0e1-f852c3e711b0}</Project>
+      <Name>Gnosis.Data</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
